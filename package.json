@@ -1,0 +1,23 @@
+{
+  "name": "weblayout-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leo791114/WebLayOut-Shop.git"
+  },
+  "author": "GUAN HONG, LIOU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leo791114/WebLayOut-Shop/issues"
+  },
+  "homepage": "https://github.com/leo791114/WebLayOut-Shop#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
