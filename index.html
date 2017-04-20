@@ -43,17 +43,17 @@
     </div>
     <!--Navbar-->
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" id="navbar">
             <!--Logo-->
             <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" id="logo">
                 <img src="./images/logo.png" alt="Logo">
             </div>
             <!--Cart-->
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 col-md-push-6 col-lg-push-6" id="cart">
+            <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 col-md-push-6 col-lg-push-6" id="cart">
                 <ul>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Your cart
+                        <a href="#" class="dropdown-toggle clearfix" data-toggle="dropdown">
+                            <p>Your cart</p>
                             <img src="./images/arrow1.png" alt="arrow1">
                         </a>
                         <ul class="dropdown-menu">
@@ -63,14 +63,15 @@
                 </ul>
                 <ul>
                     <a href="#">
-                        <li id="shopping_bag"><img src="images/bag.png" alt="shopping bag"></li>
-                        <li>0 Items | $0</li>
-                        <div class="clearfix"></div>
+                        <li class="clearfix" id="shopping_bag">
+                            <img src="images/bag.png" alt="shopping bag">
+                            <p>0 Items | $</p>
+                        </li>
                     </a>
                 </ul>
             </div>
             <!--Navbar-->
-            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-md-pull-2 col-lg-pull-2" id="navigation">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-md-pull-1 col-lg-pull-1" id="navigation">
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
                         <div class="navbar-header">

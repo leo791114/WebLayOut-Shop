@@ -89,6 +89,10 @@
     color: #fff;
 }
 
+#user a .glyphicon {
+    color: #555;
+}
+
 #search {
     height: 100%;
     text-align: center;
@@ -111,17 +115,61 @@
 
 /*Navbar*/
 
+.container-fluid #navbar {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+
+/*Navbar-Logo*/
+
 #logo {
     background-color: #abc;
     text-align: center;
-    padding: 0;
-    margin: 0;
 }
+
+#logo img {
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+
+/*Navbar-Cart*/
 
 #cart {
     background-color: #ff0000;
     /*color: #;*/
 }
+
+#cart ul {
+    list-style-type: none;
+    border: 1px solid #dedede;
+    margin: 0;
+    padding: 0;
+}
+
+#cart .dropdown p,
+#cart #shopping_bag img {
+    float: left;
+    margin: auto;
+    padding-left: 1px;
+}
+
+#cart .dropdown img {
+    float: right;
+    padding-top: 5px;
+    padding-right: 1px;
+}
+
+#cart #shopping_bag p {
+    float: right;
+    margin: auto;
+    padding-top: 2px;
+    padding-right: 1px;
+}
+
+
+/*Navbar-Navigation*/
 
 #navigation {
     background-color: #ffff00;
@@ -133,4 +181,13 @@
     padding: 0;
     margin: 0;
     border: none;
+}
+
+#navigation .navbar .navbar-nav {
+    float: none;
+    display: inline-block;
+}
+
+#navigation .navbar .navbar-collapse {
+    text-align: center;
 }
