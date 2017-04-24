@@ -379,3 +379,29 @@
     background-color: #ff4d4d;
     border-radius: 0;
 }
+
+
+/*Stay updated-right*/
+
+.social {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.social li {
+    float: left;
+}
+
+#find {
+    padding: 8px;
+}
+
+.social li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #535353;
+    font-size: 20px;
+}
