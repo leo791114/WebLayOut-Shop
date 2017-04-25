@@ -309,6 +309,41 @@
 }
 
 
+/*Carousel-fade effect*/
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-property: opacity;
+    -moz-transition-duration: 0.5s;
+    -o-transition-property: opacity;
+    -o-transition-duration: 0.5s;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    opacity: 0;
+    z-index: 1;
+    left: 0;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+
+
 /*Carousel part-indicators*/
 
 #myCarousel .carousel-indicators {
@@ -366,7 +401,10 @@
 #updated {
     margin-top: 60px;
     background-color: #E1DFDF;
-    padding: 15px 0;
+}
+
+#email {
+    margin: 15px 0;
 }
 
 #updated .input-group span.input-group-addon {
@@ -388,14 +426,18 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .social li {
-    float: left;
+    display: inline-block;
+    padding-right: 18px;
+    padding-left: 18px;
 }
 
-#find {
-    padding: 8px;
+.find {
+    padding-top: 22px;
+    padding-bottom: 22px;
 }
 
 .social li a {
@@ -404,4 +446,39 @@
     text-decoration: none;
     color: #535353;
     font-size: 20px;
+}
+
+.social li a {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.social li:nth-child(2),
+.social li:nth-last-child(1) {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+@media screen and (max-width: 768px) {
+    #updated div.pull-right ul.social {
+        text-align: center;
+    }
+    #updated form div.pull-right ul.social li {
+        display: inline-block;
+        float: none;
+    }
+}
+
+
+/*Brand picture part*/
+
+#brand {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#brand img {
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
 }

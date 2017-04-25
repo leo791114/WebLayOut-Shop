@@ -147,7 +147,7 @@
     </div>
 
     <!--Carousel-->
-    <div id="myCarousel" class="carousel slide hidden-xs" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide hidden-xs carousel-fade" data-ride="carousel">
         <!--Indicators-->
         <!--<div id="indicators">-->
         <ol class="carousel-indicators">
@@ -182,10 +182,10 @@
     <!--Stay updated part-->
     <div class="container-fluid" id="updated">
         <form>
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="email">
                 <div class="input-group">
                     <span class="input-group-addon">Stay updated</span>
-                    <input id="email" type="text" class="form-control" placeholder="Your email address">
+                    <input type="text" class="form-control" placeholder="Your email address">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit">
                             <span class="glyphicon glyphicon-plus"></span>
@@ -204,6 +204,29 @@
         </form>
     </div>
 
+    <!--Brand-->
+    <div class="container-fluid hidden-xs" id="brand">
+        <a href="#">
+            <img src="images/brands.jpg" alt="Brand">
+        </a>
+    </div>
+
+    <!--Commodity-Toggleable/Dynamics Tabs-->
+    <div class="container-fluid">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#hot" data-toggle="tab">WHAT'S HOT</a></li>
+            <li><a href="#designers" data-toggle="tab">DESIGNERS</a></li>
+            <li><a href="#featured" data-toggle="tab">FEATURED</a></li>
+            <li><a href="#latest" data-toggle="tab">LATEST</a></li>
+            <button class="btn btn-default">&lsaquo</button>
+            <button class="btn btn-default">&rsaquo</button>
+        </ul>
+        <div class="tab-content">
+            <div id="hot" class="tab-pane fade in active">
+
+            </div>
+        </div>
+    </div>
 
 </body>
 
