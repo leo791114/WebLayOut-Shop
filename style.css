@@ -11,6 +11,10 @@
     position: relative;
 }
 
+#header .row {
+    margin: 0;
+}
+
 #header_left {
     color: #fff;
     font-size: 11px;
@@ -215,12 +219,6 @@
 #navigation .navbar .navbar-collapse {
     text-align: center;
 }
-
-
-/*.navbar-header h3 {
-    float: left;
-    margin: 15px;
-}*/
 
 .navbar-default .navbar-header,
 .navbar-default .navbar-header button,
@@ -466,6 +464,33 @@
         display: inline-block;
         float: none;
     }
+    #updated {
+        background-color: #fff;
+    }
+    #updated div#email {
+        margin: 0;
+        background-color: #fff;
+    }
+    #updated div.pull-right {
+        background-color: #fff;
+        margin-top: 10px;
+    }
+    #updated {
+        margin-top: 20px;
+    }
+    #updated div.pull-right .social li:nth-child(2),
+    #updated div.pull-right .social li:nth-last-child(1) {
+        background-color: #B7B7B7;
+    }
+    #updated div.pull-right .social li:nth-child(3) {
+        background-color: #8C8787;
+    }
+    .social {
+        font-size: 0;
+    }
+    .social li {
+        font-size: 14px;
+    }
 }
 
 
@@ -481,4 +506,62 @@
     width: 100%;
     padding-right: 40px;
     padding-left: 40px;
+}
+
+
+/*Commodity*/
+
+div.tab-content .thumbnail {
+    text-align: center;
+    padding: 0;
+}
+
+div.tab-content div.thumbnail .caption a {
+    text-decoration: none;
+}
+
+#commodity .tab-content .row {
+    margin: 0;
+    padding: 0 10px;
+}
+
+#previous,
+#next {
+    cursor: pointer;
+}
+
+.tab-content {
+    background-color: #F5A2A3;
+    padding-top: 10px;
+}
+
+#commodity .nav-tabs li a {
+    border: none;
+    background: none;
+    color: #000;
+    font-size: 20px;
+}
+
+#commodity ul.nav.nav-tabs li.pull-right {
+    margin: none;
+    /*background: #F1F1F1;*/
+}
+
+#commodity .nav-tabs li.pull-right a {
+    font-size: 20px;
+    border: none;
+    background: #F1F1F1;
+    margin-right: 0;
+    border-radius: 0;
+}
+
+#commodity .nav-tabs li.pull-right a:hover {
+    background-color: #F5A2A3;
+    color: #fff;
+}
+
+#commodity .nav-tabs li.active,
+#commodity .nav-tabs li.active a {
+    background-color: #F5A2A3;
+    color: #fff;
 }

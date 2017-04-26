@@ -1,6 +1,7 @@
 $(function () {
     hoverOpen();
     emailFocus();
+    tabToggle();
 })
 
 function hoverOpen() {
@@ -22,5 +23,15 @@ function emailFocus() {
         if (this.placeholder == "") {
             this.placeholder = "Your email address";
         }
+    });
+}
+
+function tabToggle() {
+    $('#next').click(function () {
+        $('.nav-tabs > li.active').next('li').find('a').trigger('click');
+    });
+
+    $('#previous').on('click', function () {
+        $('.nav-tabs > li.active').prev('li').find('a').trigger('click');
     });
 }
