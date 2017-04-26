@@ -511,6 +511,9 @@
 
 /*Commodity*/
 
+
+/*Commodity-tab content*/
+
 div.tab-content .thumbnail {
     text-align: center;
     padding: 0;
@@ -525,14 +528,32 @@ div.tab-content div.thumbnail .caption a {
     padding: 0 10px;
 }
 
-#previous,
-#next {
-    cursor: pointer;
-}
-
 .tab-content {
     background-color: #F5A2A3;
     padding-top: 10px;
+}
+
+.tab-content .thumbnail .caption a {
+    color: #727272;
+}
+
+.tab-content .thumbnail .caption a button.btn {
+    background-color: #f5a2a3;
+    color: #ffffff;
+    box-shadow: 0 3px #f71c4d;
+}
+
+.tab-content div.row div:hover .thumbnail .caption button {
+    background-color: #473494;
+    box-shadow: 0 3px #3e2d66;
+}
+
+
+/*Commodity-tab bar*/
+
+#previous,
+#next {
+    cursor: pointer;
 }
 
 #commodity .nav-tabs li a {
@@ -544,7 +565,6 @@ div.tab-content div.thumbnail .caption a {
 
 #commodity ul.nav.nav-tabs li.pull-right {
     margin: none;
-    /*background: #F1F1F1;*/
 }
 
 #commodity .nav-tabs li.pull-right a {
@@ -564,4 +584,23 @@ div.tab-content div.thumbnail .caption a {
 #commodity .nav-tabs li.active a {
     background-color: #F5A2A3;
     color: #fff;
+}
+
+
+/*Commodity - shop it effect*/
+
+.tab-content .thumbnail a img:nth-child(2) {
+    margin-top: -180px;
+    visibility: hidden;
+    /*position: absolute;
+    bottom: 150px;
+    left: 35px;*/
+}
+
+.tab-content .thumbnail a:hover img:nth-child(2) {
+    visibility: visible;
+}
+
+#commodity .tab-content div.thumbnail div.caption {
+    margin-top: 50px;
 }
