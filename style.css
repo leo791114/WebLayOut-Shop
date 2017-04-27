@@ -609,4 +609,10 @@ div.tab-content div.thumbnail .caption a {
 
 #clearance .row #badge {
     padding: 0;
+    margin: 0;
+}
+
+#clearance .row .hr_line {
+    padding: 0;
+    margin: 0;
 }
