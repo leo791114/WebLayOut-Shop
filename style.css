@@ -590,17 +590,23 @@ div.tab-content div.thumbnail .caption a {
 /*Commodity - shop it effect*/
 
 .tab-content .thumbnail a img:nth-child(2) {
-    margin-top: -180px;
     visibility: hidden;
-    /*position: absolute;
-    bottom: 150px;
-    left: 35px;*/
+    position: absolute;
+    bottom: 50%;
+    left: 20%;
 }
 
 .tab-content .thumbnail a:hover img:nth-child(2) {
     visibility: visible;
 }
 
-#commodity .tab-content div.thumbnail div.caption {
-    margin-top: 50px;
+
+/*Clearance Badge*/
+
+#clearance .row hr {
+    border-color: #534f4f;
+}
+
+#clearance .row #badge {
+    padding: 0;
 }
