@@ -603,10 +603,28 @@ div.tab-content div.thumbnail .caption a {
 
 /*Clearance Badge*/
 
+#clearance {
+    margin: 30px 0;
+}
+
+#clearance .row {
+    margin: 0;
+}
+
 #clearance .row hr {
     border-color: #534f4f;
 }
 
 #clearance .row #badge {
     padding: 0;
+    text-align: center;
+}
+
+#clearance .row #badge img {
+    width: 100%;
+}
+
+#clearance .row div:not(#badge) {
+    padding: 0;
+    margin: 50% 0;
 }
