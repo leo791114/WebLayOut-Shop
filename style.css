@@ -635,12 +635,13 @@ div.tab-content div.thumbnail .caption a {
     margin: 0;
 }
 
-#clearance_commodity .row div {
-    border: none;
+#clearance_commodity .row>div {
+    display: none;
 }
 
 #clearance_commodity .row .thumbnail,
 #clearance_commodity .row .thumbnail img:first-child {
+    border: none;
     padding: 0;
     width: 100%;
 }
@@ -698,5 +699,15 @@ div.tab-content div.thumbnail .caption a {
 }
 
 #load h3 {
+    margin: 0;
+}
+
+#less {
+    background-color: #f5592c;
+    color: #fff;
+    margin-top: 10px;
+}
+
+#less h3 {
     margin: 0;
 }
