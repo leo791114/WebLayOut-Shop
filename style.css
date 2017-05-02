@@ -604,27 +604,99 @@ div.tab-content div.thumbnail .caption a {
 /*Clearance Badge*/
 
 #clearance {
-    margin: 30px 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-#clearance .row {
-    margin: 0;
+#clearance div#hr_one,
+#clearance div#hr_two {
+    width: 40%;
+    margin: auto;
 }
 
-#clearance .row hr {
-    border-color: #534f4f;
+#clearance div hr {
+    border-color: #E1DFDF;
 }
 
-#clearance .row #badge {
-    padding: 0;
+
+/*Clearance Commodity*/
+
+#clearance_commodity {
+    margin-top: 30px;
     text-align: center;
 }
 
-#clearance .row #badge img {
+#clearance_commodity .row {
+    margin: 0;
+}
+
+#clearance_commodity .row div {
+    border: none;
+}
+
+#clearance_commodity .row .thumbnail,
+#clearance_commodity .row .thumbnail img:first-child {
+    padding: 0;
     width: 100%;
 }
 
-#clearance .row div:not(#badge) {
+#clearance_commodity .thumbnail p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#clearance_commodity div.row .thumbnail .caption {
+    text-align: center;
     padding: 0;
+    padding-bottom: 10px;
+    background-color: #f7f7f7
+}
+
+#clearance_commodity div.row .thumbnail .caption a {
+    text-decoration: none;
+    color: #727272;
+}
+
+#clearance_commodity .row .thumbnail .caption button {
+    color: #ffffff;
+    background-color: #f5a2a3;
+    box-shadow: 0 3px #f71c4d;
+}
+
+#clearance_commodity .row div:hover .thumbnail .caption button {
+    background-color: #473494;
+    box-shadow: 0 3px #3e2d66;
+}
+
+
+/*Clearance Commodity - shop effect*/
+
+#clearance_commodity .row a img:nth-child(2) {
+    visibility: hidden;
+    position: absolute;
+    bottom: 50%;
+    left: 25%;
+}
+
+#clearance_commodity .row div:hover img:nth-child(2) {
+    visibility: visible;
+}
+
+
+/*Clearance Commodity - load more*/
+
+#load {
+    background-color: #000;
+    color: #fff;
+    margin-top: 10px;
+}
+
+#load h3 {
     margin: 0;
 }
