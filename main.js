@@ -4,7 +4,7 @@ $(function () {
     tabToggle();
     load();
     less();
-    resizeInit();
+    // resizeInit();
 });
 
 function hoverOpen() {
@@ -41,7 +41,7 @@ function tabToggle() {
 
 // Load and Less function
 function load() {
-    // $('#clearance_commodity .row>div').hide();
+    $('#clearance_commodity .row>div').hide();
     if ($(window).width() >= 992) {
         $('#clearance_commodity .row>div').slice(0, 4).show();
         $('#load').on('click', function (event) {
@@ -52,14 +52,15 @@ function load() {
                 },
                 1500);
             $('#clearance_commodity').append($(window).width());
+
         });
     } else if ($(window).width() >= 768 && $(window).width() < 992) {
         $('#clearance_commodity .row>div').slice(0, 3).show();
         $('#load').on('click', function (event) {
             event.preventDefault();
             $('#clearance_commodity .row>div:hidden').slice(0, 3).slideDown(1500);
-            $('html,body').animate({
-                    scrollTop: $(this).offest().top
+            $('body').animate({
+                    scrollTop: $(this).offset().top
                 },
                 1500);
             $('#clearance_commodity').append($(window).width());
@@ -70,9 +71,11 @@ function load() {
             event.preventDefault();
             $('#clearance_commodity .row>div:hidden').slice(0, 2).slideDown(1500);
             $('body').animate({
-                    scrollTop: $(this).offest().top
+                    scrollTop: $(this).offset().top
                 },
                 1500);
+            $('#clearance_commodity').append($(window).width());
+
         });
     }
 }
@@ -80,10 +83,20 @@ function load() {
 
 function less() {
     $('#less').on('click', function () {
-        if ($(window).width() > 992) {
+        if ($(window).width() >= 992) {
             var $show_items = $('#clearance_commodity .row>div').not('#clearance_commodity .row>div:hidden').length;
             if ($show_items > 4) {
                 $('#clearance_commodity .row>div').slice($show_items - 4, $show_items).slideUp(1500);
+            }
+        } else if ($(window).width() < 992 && $(window).width() >= 768) {
+            var $show_items = $('#clearance_commodity .row>div').not('#clearance_commodity .row>div:hidden').length;
+            if ($show_items > 3) {
+                $('#clearance_commodity .row>div').slice($show_items - 3, $show_items).slideUp(1500);
+            }
+        } else {
+            var $show_items = $('#clearance_commodity .row>div').not('#clearance_commodity .row>div:hidden').length;
+            if ($show_items > 2) {
+                $('#clearance_commodity .row>div').slice($show_items - 2, $show_items).slideUp(1500);
             }
         }
     });
@@ -92,11 +105,6 @@ function less() {
 
 function resizeInit() {
     $(window).resize(function () {
-        $('#clearance_commodity .row>div').hide();
-        if ($(window).width() >= 992) {
-            $('#clearance_commodity .row>div').slice(0, 4).show();
-        } else if ($(window).width() < 992 && $(window).width() > 768) {
-            $('#clearance_commodity .row>div').slide(0, 3).show();
-        }
+        location.reload();
     });
 }
