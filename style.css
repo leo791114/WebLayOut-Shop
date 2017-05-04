@@ -619,7 +619,7 @@ div.tab-content div.thumbnail .caption a {
     margin: auto;
 }
 
-#clearance div hr {
+hr {
     border-color: #E1DFDF;
 }
 
@@ -710,4 +710,105 @@ div.tab-content div.thumbnail .caption a {
 
 #less h3 {
     margin: 0;
+}
+
+
+/*Favorite Brands*/
+
+#favorite_brands {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#favorite_brands div:nth-child(2) {
+    display: -webkit-flex;
+    display: flex;
+    white-space: nowrap;
+}
+
+#favorite_brands h3 {
+    margin: auto;
+}
+
+#hr_three,
+#hr_four {
+    margin: auto;
+    width: 40%;
+}
+
+
+/*Favorite Brands - brand pics*/
+
+#brand_pics {
+    display: -webkit-flex;
+    display: flex;
+    margin: 0px;
+}
+
+#brand_pics div {
+    margin: auto;
+    padding: 0;
+}
+
+
+/*Favorite Brands - buttom*/
+
+#brands_buttom {
+    display: -webkit-flex;
+    display: flex;
+    /*margin: auto;*/
+}
+
+#brands_buttom div {
+    width: 99%;
+    margin: auto;
+}
+
+
+/*About*/
+
+#about {
+    text-align: center;
+}
+
+#about h4 {
+    color: #c9c9c9;
+    line-height: 200%;
+    font-size: 18px;
+    margin: auto;
+}
+
+
+/*Credit card*/
+
+#card {
+    margin-top: 30px;
+    background-color: #f7f7f7;
+}
+
+#card .row {
+    text-align: center;
+    white-space: nowrap;
+    display: -webkit-flex;
+    display: flex;
+    margin: 0;
+    padding: 20px;
+}
+
+#card .row div {
+    padding: 0;
+}
+
+#card .row div:first-child {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#card .row div p {
+    margin: auto;
 }

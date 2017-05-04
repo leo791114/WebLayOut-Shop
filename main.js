@@ -4,7 +4,7 @@ $(function () {
     tabToggle();
     load();
     less();
-    // resizeInit();
+    resizeInit();
 });
 
 function hoverOpen() {
