@@ -812,3 +812,16 @@ hr {
 #card .row div p {
     margin: auto;
 }
+
+
+/*Information*/
+
+#service div.list-group-item ul li {
+    white-space: nowrap;
+}
+
+#info .row ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
