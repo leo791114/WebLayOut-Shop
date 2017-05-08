@@ -760,18 +760,19 @@
     }
     /*Information*/
 
+    #info {
+        padding: 20px;
+        background-color: #ededed;
+    }
+
     #info .row {
-        white-space: nowrap;
         margin: 0;
         padding: 0;
         background-color: #ededed;
     }
 
     @media screen and (max-width: 992px) {
-        #info .row div {
-            text-align: center;
-        }
-        #info .row div#social .list-group-item ul {
+        #info .row {
             text-align: center;
         }
         #info .row div div.list-group,
@@ -789,20 +790,68 @@
 
     #info .row div {
         padding: 0;
+        margin: 0;
         border: none;
         background-color: transparent;
+        white-space: nowrap;
+        line-height: 200%;
     }
 
-    #info .row div:first-child {
+    #info h4 {
+        font-weight: 600;
+    }
+
+    #info .row div ul a {
+        text-decoration: none;
+        color: #8a8a8a;
+    }
+
+    #info .row div ul a:hover {
+        color: #eddeb1;
+    }
+
+    #service {
         margin-right: 20px;
     }
+    /*Information - image sprite part*/
 
-    #img-sprite {
-        width: 140px;
-        height: 100px;
-        background: url(images/img-sprite.png) -5px -30px;
+    ul#img-sprite li a span {
+        width: 40px;
+        height: 40px;
+        display: block;
+        background: url(images/img-sprite.png) no-repeat;
     }
-    /*#social .list-group-item a {
-        width: 150px;
-        height: 100px;
-    }*/
+
+    ul#img-sprite li a {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }
+
+    ul#img-sprite li a span#social_twitter {
+        background-position: -3px -39px;
+    }
+
+    ul#img-sprite li a span#social_email {
+        background-position: -45px -39px;
+    }
+
+    ul#img-sprite li a span#social_facebook {
+        background-position: -88px -39px;
+    }
+
+    ul#img-sprite li a span#social_google {
+        background-position: -3px -86px;
+    }
+
+    ul#img-sprite li a span#social_t {
+        background-position: -47px -86px;
+    }
+
+    ul#img-sprite li a span#social_v {
+        background-position: -95px -86px;
+    }
+
+    ul#img-sprite li a span:hover {
+        opacity: 0.8;
+    }
