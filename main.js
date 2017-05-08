@@ -105,6 +105,7 @@ function less() {
 
 function resizeInit() {
     $(window).resize(function () {
-        location.reload();
+        // location.reload();
+        this.location.href = this.location.href
     });
 }
