@@ -408,12 +408,18 @@
 #updated .input-group span.input-group-addon {
     background: none;
     border: none;
+    font-size: 1vmin;
+}
+
+div#updated form div#email div.input-group {
+    font-size: 1vmin;
 }
 
 #updated .input-group .input-group-btn button.btn {
     color: #fff;
     background-color: #ff4d4d;
     border-radius: 0;
+    font-size: 1vmin;
 }
 
 
@@ -431,6 +437,7 @@
     display: inline-block;
     padding-right: 18px;
     padding-left: 18px;
+    font-size: 1vmin;
 }
 
 .find {
@@ -443,7 +450,7 @@
     text-align: center;
     text-decoration: none;
     color: #535353;
-    font-size: 20px;
+    font-size: 1vmin;
 }
 
 .social li a {
@@ -556,26 +563,49 @@ div.tab-content div.thumbnail .caption a {
     cursor: pointer;
 }
 
+#commodity .nav.nav-tabs {
+    border: none;
+}
+
+#commodity .nav-tabs li {
+    margin: 0;
+    height: 49px;
+    display: flex;
+    display: -webkit-flex;
+}
+
 #commodity .nav-tabs li a {
+    margin: auto;
     border: none;
     background: none;
     color: #000;
-    font-size: 20px;
+    font-size: 0.5vmin;
+}
+
+@media screen and (max-width: 768px) {
+    #commodity .nav-tabs li a {
+        padding: 0;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
 }
 
 #commodity ul.nav.nav-tabs li.pull-right {
-    margin: none;
+    margin: 0;
+    display: -webkit-flex;
+    display: flex;
+    background: #F1F1F1;
 }
 
 #commodity .nav-tabs li.pull-right a {
-    font-size: 20px;
+    font-size: 0.5vmin;
     border: none;
-    background: #F1F1F1;
-    margin-right: 0;
+    background: transparent;
+    margin: auto;
     border-radius: 0;
 }
 
-#commodity .nav-tabs li.pull-right a:hover {
+#commodity ul.nav-tabs li.pull-right:active {
     background-color: #F5A2A3;
     color: #fff;
 }
@@ -584,6 +614,26 @@ div.tab-content div.thumbnail .caption a {
 #commodity .nav-tabs li.active a {
     background-color: #F5A2A3;
     color: #fff;
+}
+
+
+/*Commodity - Caption*/
+
+@media screen and (max-width: 768px) {
+    #commodity div.tab-content .thumbnail div.caption {
+        overflow: scroll;
+    }
+}
+
+#commodity div.tab-content .thumbnail div.caption button p {
+    margin: 0;
+    font-size: 0.5vmin;
+}
+
+#commodity div.tab-content .thumbnail div.caption a,
+#commodity div.tab-content .thumbnail div.caption p {
+    font-size: 0.5vmin;
+    white-space: nowrap;
 }
 
 
@@ -922,11 +972,29 @@ ul#img-sprite li a span:hover {
 #footer {
     border-radius: 0;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
 }
 
 #footer p {
+    margin: auto;
+    /*vertically center the text*/
+    padding: 5px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#footer #myNavbar ul li:not(:nth-last-child(1)) a {
+    border-right: 1px solid #5d5d5d;
+}
+
+#footer #myNavbar ul li a {
+    padding: 0;
+    padding-right: 15px;
+    margin: 15px;
     margin-right: 0;
-    margin-left: 0;
-    margin-bottom: 0;
+}
+
+#footer .navbar-brand:hover,
+#footer .navbar-brand {
+    color: #5d5d5d;
 }
