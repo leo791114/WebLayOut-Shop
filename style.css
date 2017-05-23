@@ -628,7 +628,7 @@ div.tab-content div.thumbnail .caption a {
 
 @media screen and (max-width: 768px) {
     #commodity div.tab-content .thumbnail div.caption {
-        /*overflow: scroll;*/
+        overflow: scroll;
         font-size: 9px;
         -webkit-transform: scale(0.75);
     }
@@ -642,7 +642,7 @@ div.tab-content div.thumbnail .caption a {
 #commodity div.tab-content .thumbnail div.caption a,
 #commodity div.tab-content .thumbnail div.caption p {
     font-size: 0.5vmin;
-    /*white-space: nowrap;*/
+    white-space: nowrap;
 }
 
 
@@ -662,7 +662,8 @@ div.tab-content div.thumbnail .caption a {
     visibility: visible;
 }
 
-.tab-content .thumbnail a img:nth-child(2) {
+
+/*.tab-content .thumbnail a img:nth-child(2) {
     visibility: hidden;
     position: absolute;
     bottom: 50%;
@@ -671,7 +672,7 @@ div.tab-content div.thumbnail .caption a {
 
 .tab-content .thumbnail a:hover img:nth-child(2) {
     visibility: visible;
-}
+}*/
 
 
 /*Clearance Badge*/
