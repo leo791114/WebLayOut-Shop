@@ -565,11 +565,13 @@ div.tab-content div.thumbnail .caption a {
 
 #commodity .nav.nav-tabs {
     border: none;
+    display: flex;
+    display: -webkit-flex;
 }
 
 #commodity .nav-tabs li {
-    margin: 0;
-    height: 49px;
+    /*margin: 0;*/
+    /*height: 49px;*/
     display: flex;
     display: -webkit-flex;
 }
@@ -582,19 +584,15 @@ div.tab-content div.thumbnail .caption a {
     font-size: 0.5vmin;
 }
 
-@media screen and (max-width: 768px) {
-    #commodity .nav-tabs li a {
-        padding: 0;
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-}
-
 #commodity ul.nav.nav-tabs li.pull-right {
-    margin: 0;
+    margin-bottom: 0;
     display: -webkit-flex;
     display: flex;
     background: #F1F1F1;
+}
+
+#commodity ul.nav.nav-tabs li:nth-child(5) {
+    margin-left: auto;
 }
 
 #commodity .nav-tabs li.pull-right a {
@@ -616,12 +614,23 @@ div.tab-content div.thumbnail .caption a {
     color: #fff;
 }
 
+@media screen and (max-width: 768px) {
+    #commodity .nav-tabs li a {
+        padding-right: 0px;
+        padding-left: 0px;
+        font-size: 9px;
+        -webkit-transform: scale(0.75)
+    }
+}
+
 
 /*Commodity - Caption*/
 
 @media screen and (max-width: 768px) {
     #commodity div.tab-content .thumbnail div.caption {
-        overflow: scroll;
+        /*overflow: scroll;*/
+        font-size: 9px;
+        -webkit-transform: scale(0.75);
     }
 }
 
@@ -633,11 +642,25 @@ div.tab-content div.thumbnail .caption a {
 #commodity div.tab-content .thumbnail div.caption a,
 #commodity div.tab-content .thumbnail div.caption p {
     font-size: 0.5vmin;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
 }
 
 
 /*Commodity - shop it effect*/
+
+.tab-content .thumbnail a span#shopping-cart {
+    visibility: hidden;
+    position: absolute;
+    top: 1em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 5vmax;
+}
+
+.tab-content .thumbnail a:hover span#shopping-cart {
+    visibility: visible;
+}
 
 .tab-content .thumbnail a img:nth-child(2) {
     visibility: hidden;
