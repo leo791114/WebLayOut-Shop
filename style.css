@@ -208,12 +208,23 @@
     padding: 0;
     margin: 0;
     border: none;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
-#navigation .navbar .navbar-nav {
+#navigation .navbar .navbar-nav,
+#navigation .navbar #myNavbar ul.navbar-nav li.dropdown {
     float: none;
     display: inline-block;
+    font-size: 1vmax;
+}
+
+#navigation .navbar #myNavbar ul.navbar-nav li.dropdown a {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#navigation .navbar #myNavbar {
+    white-space: nowrap;
 }
 
 #navigation .navbar .navbar-collapse {
@@ -648,7 +659,7 @@ div.tab-content div.thumbnail .caption a {
 
 /*Commodity - shop it effect*/
 
-.tab-content .thumbnail a span#shopping-cart {
+span#shopping-cart {
     visibility: hidden;
     position: absolute;
     top: 1em;
@@ -656,9 +667,11 @@ div.tab-content div.thumbnail .caption a {
     right: 0;
     bottom: 0;
     font-size: 5vmax;
+    color: #d8d8d8;
+    opacity: 0.8;
 }
 
-.tab-content .thumbnail a:hover span#shopping-cart {
+a:hover span#shopping-cart {
     visibility: visible;
 }
 
@@ -752,7 +765,24 @@ hr {
 
 /*Clearance Commodity - shop effect*/
 
-#clearance_commodity .row a img:nth-child(2) {
+#clearance_commodity span#shopping-cart {
+    visibility: hidden;
+    position: absolute;
+    top: 2em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 6vmax;
+    color: #d8d8d8;
+    opacity: 0.8;
+}
+
+#clearance_commodity a:hover span#shopping-cart {
+    visibility: visible;
+}
+
+
+/*#clearance_commodity .row a img:nth-child(2) {
     visibility: hidden;
     position: absolute;
     bottom: 50%;
@@ -761,7 +791,7 @@ hr {
 
 #clearance_commodity .row div:hover img:nth-child(2) {
     visibility: visible;
-}
+}*/
 
 
 /*Clearance Commodity - load more*/
@@ -1007,11 +1037,11 @@ ul#img-sprite li a span:hover {
     vertical-align: middle;
 }
 
-#footer #myNavbar ul li:not(:nth-last-child(1)) a {
+#footer #myFooter ul li:not(:nth-last-child(1)) a {
     border-right: 1px solid #5d5d5d;
 }
 
-#footer #myNavbar ul li a {
+#footer #myFooter ul li a {
     padding: 0;
     padding-right: 15px;
     margin: 15px;
@@ -1021,4 +1051,8 @@ ul#img-sprite li a span:hover {
 #footer .navbar-brand:hover,
 #footer .navbar-brand {
     color: #5d5d5d;
+}
+
+#myFooter {
+    display: inline-block;
 }
