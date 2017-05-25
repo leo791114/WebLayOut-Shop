@@ -736,7 +736,7 @@ hr {
 #clearance_commodity .thumbnail p {
     margin: 0;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 2vmax;
 }
 
 #clearance_commodity div.row .thumbnail .caption {
@@ -755,6 +755,7 @@ hr {
     color: #ffffff;
     background-color: #f5a2a3;
     box-shadow: 0 3px #f71c4d;
+    font-size: 2vmax;
 }
 
 #clearance_commodity .row div:hover .thumbnail .caption button {
@@ -803,6 +804,7 @@ hr {
 }
 
 #load h3 {
+    font-size: 2vmax;
     margin: 0;
 }
 
@@ -813,6 +815,7 @@ hr {
 }
 
 #less h3 {
+    font-size: 2vmax;
     margin: 0;
 }
 
@@ -1030,6 +1033,7 @@ ul#img-sprite li a span:hover {
 }
 
 #footer p {
+    font-size: 1vmax;
     margin: auto;
     /*vertically center the text*/
     padding: 5px;
@@ -1053,6 +1057,17 @@ ul#img-sprite li a span:hover {
     color: #5d5d5d;
 }
 
-#myFooter {
+#myFooter ul.navbar-nav,
+#myFooter ul.navbar-nav li {
     display: inline-block;
 }
+
+nav#footer div.navbar-header {
+    display: inline-block;
+}
+
+
+/*#myFooter {
+    display: inline-block;
+    float: none;
+}*/
