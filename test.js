@@ -11,8 +11,9 @@ function scrollBottom(scroll) {
     console.log($(document).height());
     console.log($(window).height());
     console.log(scroll);
-    if (typeof scroll === 'number') {
-        $(window).scrollTo(0, $(document).height() - $(window).height - scroll);
+    if (typeof scroll == 'number') {
+        $(window).scrollTo(0, $(document).height() - $(window).height() - scroll);
+        console.log($(document).height() - $(window).height() - scroll);
         return $(document).height() - $(window).height - scroll;
     } else {
         return $(document).height() - $(window).height() - $(window).scrollTop();

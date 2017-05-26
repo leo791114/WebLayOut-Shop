@@ -5,6 +5,7 @@ $(function () {
     load();
     less();
     resizeInit();
+    console.log($('#less').position().top);
 });
 
 function hoverOpen() {
@@ -90,17 +91,18 @@ function less() {
             if ($show_items > 4) {
                 $('#clearance_commodity .row>div').slice($show_items - 4, $show_items).slideUp(1500);
                 $('body').animate({
-                        scrollTop: $(this).offset().top - $('#clearance_commodity .row>div').height()
+                        scrollTop: $(this).offset().top - $('#clearance_commodity .row>div').height() * 2
                     },
                     1500);
                 $('#clearance_commodity').append($('#clearance_commodity img').height());
+
             }
         } else if ($(window).width() < 992 && $(window).width() >= 768) {
             var $show_items = $('#clearance_commodity .row>div').not('#clearance_commodity .row>div:hidden').length;
             if ($show_items > 3) {
                 $('#clearance_commodity .row>div').slice($show_items - 3, $show_items).slideUp(1500);
                 $('body').animate({
-                        scrollTop: $(this).offset().top - $('#clearance_commodity .row>div').height()
+                        scrollTop: $(this).offset().top - $('#clearance_commodity .row>div').height() * 2
                     },
                     1500);
                 $('#clearance_commodity').append($('#clearance_commodity img').height());
@@ -110,7 +112,7 @@ function less() {
             if ($show_items > 2) {
                 $('#clearance_commodity .row>div').slice($show_items - 2, $show_items).slideUp(1500);
                 $('body').animate({
-                        scrollTop: $(this).offset().top - $('#clearance_commodity .row>div').height()
+                        scrollTop: $(this).offset().top - $('#clearance_commodity .row>div').height() * 2
                     },
                     1500);
                 $('#clearance_commodity').append($('#clearance_commodity img').height());
