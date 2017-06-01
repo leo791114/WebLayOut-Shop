@@ -221,6 +221,7 @@
 #navigation .navbar #myNavbar ul.navbar-nav li.dropdown a {
     padding-right: 10px;
     padding-left: 10px;
+    display: inline-block;
 }
 
 #navigation .navbar #myNavbar {
@@ -279,6 +280,14 @@
 
 .navbar-default .navbar-header .navbar-toggle:focus {
     background-color: #ff8080;
+}
+
+.navbar-default #myNavbar ul.nav li.dropdown ul.dropdown-menu {
+    position: relative;
+}
+
+.navbar-default div#myNavbar {
+    overflow: visible;
 }
 
 
