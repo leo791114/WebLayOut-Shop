@@ -282,13 +282,23 @@
     background-color: #ff8080;
 }
 
-.navbar-default #myNavbar ul.nav li.dropdown ul.dropdown-menu {
-    position: relative;
-}
-
 .navbar-default div#myNavbar {
     overflow: visible;
 }
+
+@media screen and (max-width: 992px){
+    #navigation .navbar #myNavbar ul.navbar-nav li.dropdown{
+        display: block;
+    }
+    #navigation .navbar #myNavbar ul.navbar-nav li.dropdown ul.dropdown-menu{
+        text-align: center;
+        background-color: #fff;
+        border: solid 1px #000000;
+        border-radius: 0;
+    }
+    
+}
+
 
 
 /*style collapse*/
