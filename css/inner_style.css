@@ -295,9 +295,10 @@
         background-color: #fff;
         border: solid 1px #000000;
         border-radius: 0;
-    }
-    
+    }    
 }
+
+
 
 
 
@@ -329,6 +330,7 @@
 }
 
 /*Breadcrumbs*/
+
 #breadcrumbs {
     margin-top: 2.5vmax;
 }
@@ -338,95 +340,143 @@ ul.breadcrumb {
     border-top: solid 1px #e7e7e7;
     border-bottom: solid 1px #e7e7e7;
 }
-ul.breadcrumb li+li:before{
+
+ul.breadcrumb li+li:before {
     content: '>\00a0';
-    color: #000000;-
+    color: #000000;
 }
 
 ul.breadcrumb li:after {
     content: '\00a0';
 }
 
-ul.breadcrumb li a{
+ul.breadcrumb li a {
     text-decoration: none;
-    color:#000000;
+    color: #000000;
 }
 
 ul.breadcrumb li a:hover,
-ul.breadcrumb li:last-child a{
+ul.breadcrumb li:last-child a {
     color: #ff6f6f;
 }
 
+
+
 /*Carousel*/
 
-#myCarousel .carousel-inner div img {
+#myCarousel .carousel-inner div.item img {
     width: 100%;
 }
 
-/*Carousel-Fade effect*/
+#myCarousel {
+    margin: 3vmax;
+}
+
+
+/*Carousel - Fading effect*/
+
 .carousel-fade .carousel-inner div.item {
     opacity: 0;
-    -webkit-transition-property: opacity;
+    -webkit-transition: opacity;
     -webkit-transition-duration: 0.5s;
-    -moz-transition-property: opacity;
+    -moz-transition: opacity;
     -moz-transition-duration: 0.5s;
-    -o-transition-property: opacity;
+    -o-transition: opacity;
     -o-transition-duration: 0.5s;
-    transition-property: opacity;
+    transition: opacity;
     transition-duration: 0.5s;
 }
 
-.carousel-fade .carousel-inner div.item.active{
+.carousel-fade .carousel-inner .item.active {
     opacity: 1;
-
 }
 
-.carousel-fade .carousel-inner active.left,
-.carousel-fade .carousel-inner active.right{
+.carousel-fade .carousel-inner .item.active.left,
+.carousel-fade .carousel-inner .item.active.right {
     opacity: 0;
-    left: 0;
-    z-index: 1;
-} 
-
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right{
-    opacity:1
 }
 
-.carousel-fade a.carousel-control {
-    z-index: 2;
+.carousel-fade .carousel-inner .item.next.left,
+.carousel-fade .carousel-inner .item.pre.right {
+    opacity: 1;
 }
 
-/*Carousel - Left and Right control*/
 
-.carousel-fade a.left span.glyphicon {
-    left: 0;
-    margin-right: 0;
-    margin-left: 0;
-    font-size: 20px;
-    color: #555;
-}
+/*Carousel - Left and Right Control*/
 
-.carousel-fade a.right span.glyphicon {
-    right: 0;
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 20px;
-    color: #555;
-}
-
-.carousel-fade a.carousel-control {
-    padding: 0;
-    height: 20%;
-    width: 3%;
-    margin: auto;
-    text-decoration: none;
-    opacity: 0.5;
-    background: none;
-}
-
-#myCarousel {
+div#myCarousel {
     display: flex;
     display: -webkit-flex;
 }
 
+div#myCarousel a {
+    width: 3%;
+    height: 20%;
+    margin: auto;
+    background: none;
+}
+
+#myCarousel a.carousel-control.left span.glyphicon {
+    font-size: 20px;
+    left: 0;
+    margin-left: 0;
+    color: #555;
+}
+
+#myCarousel a.carousel-control.right span.glyphicon {
+    font-size: 20px;
+    right: 0;
+    margin-right: 0;
+    color: #555;
+}
+
+
+/*Carousel - Indicators*/
+
+#myCarousel ol.carousel-indicators {
+    bottom: -5vmax;
+}
+
+#myCarousel ol.carousel-indicators li {
+    border-radius: 0;
+    border: 2px solid #958c8c;
+}
+
+#myCarousel ol.carousel-indicators li.active {
+    border-color: #ff4d4d;
+}
+
+
+/*Carousel - Style content part*/
+
+#myCarousel .carousel-inner div#content {
+    margin-top: 10vmax;
+}
+
+#myCarousel .carousel-inner div.item h3 {
+    font-weight: 900;
+}
+
+#myCarousel .carousel-inner div.item h4 {
+    font-weight: 900;
+    color: #ff5959;
+}
+
+#myCarousel .carousel-inner div.item p {
+    margin: 1.5vmax;
+    color: #b0b0b0;
+}
+
+#myCarousel .carousel-inner div.item a button {
+    color: #ffffff;
+    background-color: #fd926d;
+    padding: 1vmax;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0px 0.3vmax #ff1c1c;
+}
+
+#myCarousel .carousel-inner div.item a:hover button {
+    background-color: #563ff8;
+    box-shadow: 0px 0.3vmax #2817bf;
+}
