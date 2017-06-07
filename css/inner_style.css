@@ -480,3 +480,88 @@ div#myCarousel a {
     background-color: #563ff8;
     box-shadow: 0px 0.3vmax #2817bf;
 }
+
+/*Product*/
+
+div#product {
+    margin: 2vmax;
+    padding-top: 2vmax;
+}
+
+div#product > div {
+    padding: 0;
+}
+
+/*Product - Left Part*/
+
+/*pure css method to replace down arrow for dropdown list.
+#product #product_left select {
+    width: 5vmax;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('../images/arrow1.png') no-repeat 98.5%;
+}*/
+
+
+#product div#product_left {
+    /*display: flex;
+    display: -webkit-flex;*/
+    padding-bottom: 1vmax;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+div#product_left #drop_list {
+    margin-top: 1vmax;
+    display: inline-block;
+}
+
+#product div#product_left div#selectDiv {
+    display: inline-block;
+}
+
+#selectDiv {
+    width: 7vmax;
+    line-height: 2vmax;
+    border: 1px solid #ccc;
+    position: relative;
+    background: url('../images/arrow1.png') #f4f4f4 no-repeat right;
+}
+
+#selectDiv select {
+    opacity: 0;
+    filter: alpha(opacity=0);/* For IE8 and earlier version IE*/
+    /*Make select fill whole area of selectDiv*/
+    width: 100%;
+    height: 100%;
+    /*Align the select element with selectDiv's top-left corner */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+/*Product - Left Part: Tab pagination*/
+
+#product div#pagination {
+    display: inline-block;
+}
+#product div#pagination ul {
+    padding: 0;
+    margin: 0;
+}
+
+#product div#pagination ul li {
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 1vmax;
+}
+
+#product div#pagination ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+

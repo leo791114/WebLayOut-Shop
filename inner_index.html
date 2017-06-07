@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="css/inner_style.css">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/inner_main.js"></script>
     <title>LookShop-Inner</title>
 </head>
 
@@ -239,13 +240,26 @@
 
     <!--Product-->
     <div class="container-fluid" id="product">
-        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
-            <div id="pagination-bar">
-                <select name="sort" id="sorting">
-                    <option value="date">Date</option>
-                    <option value="name">Name</option>
-                    <option value="price">Price</option>
-                </select>
+        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" id="product_left">
+            <div id="drop_list">
+                <label for="selectDiv">Sort by</label>
+                <div id="selectDiv">
+                    <span id="showElement"></span>
+                    <select name="sort" id="sorting">
+                        <option value="date">Date</option>
+                        <option value="name">Name</option>
+                        <option value="price">Price</option>
+                    </select>
+                </div>
+            </div>
+            <!--Tab pagination-->
+            <div id="pagination" class="pull-right">
+                <ul>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#" id="next">></a></li>
+                </ul>
             </div>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
