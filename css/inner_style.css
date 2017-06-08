@@ -553,7 +553,7 @@ div#product_left #drop_list {
 
 #product div#pagination ul li {
     display: inline-block;
-    background-color: #f4f4f4;
+    background-color: #e0e0e0;
     padding: 1vmax;
 }
 
@@ -562,6 +562,12 @@ div#product_left #drop_list {
     color: #000;
 }
 
+#product div#pagination ul li.active  {
+    background-color: #ff6f6f;
+}
 
+#product div#pagination ul li:hover {
+    background-color: #ffb3b3;
+}
 
 

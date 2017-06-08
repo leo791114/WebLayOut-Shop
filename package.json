@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/leo791114/WebLayOut-Shop#readme",
   "dependencies": {
+    "bootpag": "^1.0.7",
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1"
   }
