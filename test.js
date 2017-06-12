@@ -1,21 +1,14 @@
 $(function () {
-    $('#window').append($(window).height());
-    $('#document').append($(document).height());
-    scrollBottom(12);
-    console.log(scrollBottom(12));
+    $('.demo1').bootpag({
+        total: 20,
+        maxVisible: 5,
+        page: 1,
+        leaps: false,
+        firstLastUse: true
+
+    }).on('page', function (event, num) {
+        $('.content').html('page' + num);
+        console.log($('.demo1').hrefVariable);
+        console.log($('.demo1').href);
+    });
 });
-
-
-function scrollBottom(scroll) {
-    console.log(typeof scroll);
-    console.log($(document).height());
-    console.log($(window).height());
-    console.log(scroll);
-    if (typeof scroll == 'number') {
-        $(window).scrollTo(0, $(document).height() - $(window).height() - scroll);
-        console.log($(document).height() - $(window).height() - scroll);
-        return $(document).height() - $(window).height - scroll;
-    } else {
-        return $(document).height() - $(window).height() - $(window).scrollTop();
-    }
-}
