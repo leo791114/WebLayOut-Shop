@@ -85,7 +85,6 @@
             if (settings.firstLastUse) {
                 lfirst = lfirst.next();
             }
-            console.log(lp);
             // href(lp) will return javascript:void(0)
             lfirst
                 .toggleClass(settings.disabledClass, page === 1)
