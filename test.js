@@ -1,8 +1,8 @@
 $(function () {
     $('.demo1').bootpag({
-        total: 20,
+        total: 10,
         maxVisible: '',
-        page: 1,
+        page: 11,
         leaps: false,
         firstLastUse: true
 
