@@ -57,29 +57,25 @@
         // console.log($owner.data('settings'));
 
         function renderPage($bootpag, page) {
-
             // page to show
+            console.log(page);
             page = parseInt(page, 10);
             var lp,
                 maxV = settings.maxVisible == 0 ? 1 : settings.maxVisible,
                 step = settings.maxVisible == 1 ? 0 : 1,
                 vis = Math.floor((page - 1) / maxV) * maxV,
                 $page = $bootpag.find('li');
-            console.log(maxV);
-            console.log(step);
-            console.log(vis);
+
             settings.page = page = page < 0 ? 0 : page > settings.total ? settings.total : page;
             $page.removeClass(settings.activeClass);
             lp = page - 1 < 1 ? 1 :
                 settings.leaps && page - 1 >= settings.maxVisible ?
                     Math.floor((page - 1) / maxV) * maxV : page - 1;
 
-            // when the it's at the first showing page, disable the leap to first button
-            if (settings.firstLastUse) {
-                $page
-                    .first()
-                    .toggleClass(settings.disabledClass, page === 1);
-            }
+            // when the pagination is at the first showing page, disable the leap to first button
+            $page
+                .first()
+                .toggleClass(settings.disabledClass, page === 1);
 
             var lfirst = $page.first();
             if (settings.firstLastUse) {
@@ -90,12 +86,8 @@
                 .toggleClass(settings.disabledClass, page === 1)
                 .attr('data-lp', lp)
                 .find('a').attr('href', href(lp));
-            console.log(href(lp));
-            console.log(lp);
-            console.log(lfirst.find('a').attr('href'));
 
-            var step = settings.maxVisible == 1 ? 0 : 1;
-
+            // var step = settings.maxVisible == 1 ? 0 : 1;
             lp = page + 1 > settings.total ? settings.total :
                 settings.leaps && page + 1 < settings.total - settings.maxVisible ?
                     vis + settings.maxVisible + step : page + 1;
@@ -116,14 +108,17 @@
 
 
             var $currPage = $page.filter('[data-lp=' + page + ']');
-
+            console.log($currPage);
             var clist = "." + [settings.nextClass,
             settings.prevClass,
             settings.firstClass,
             settings.lastClass
             ].join(",.");
+
+
             if (!$currPage.not(clist).length) {
                 var d = page <= vis ? -settings.maxVisible : 0;
+                console.log('d:', d);
                 $page.not(clist).each(function (index) {
                     lp = index + 1 + vis + d;
                     $(this)
@@ -138,7 +133,8 @@
         }
 
         function href(c) {
-
+            console.log(c, ':', settings.hrefVariable);
+            console.log(c, ':', settings.href);
             return settings.href.replace(settings.hrefVariable, c);
         }
 
