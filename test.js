@@ -1,6 +1,6 @@
 $(function () {
     $('.demo1').bootpag({
-        total: 20,
+        total: -10,
         maxVisible: 5,
         page: 1,
         leaps: false,

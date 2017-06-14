@@ -19,30 +19,29 @@
 
         var $owner = this,
             settings = $.extend({
-                total: 0,
-                page: 1,
-                maxVisible: null,
-                leaps: true,
-                href: 'javascript:void(0);',
-                hrefVariable: '{{number}}',
-                next: '&raquo;',
-                prev: '&laquo;',
-                firstLastUse: false,
-                first: '<span aria-hidden="true">&larr;</span>',
-                last: '<span aria-hidden="true">&rarr;</span>',
-                wrapClass: 'pagination',
-                activeClass: 'active',
-                disabledClass: 'disabled',
-                nextClass: 'next',
-                prevClass: 'prev',
-                lastClass: 'last',
-                firstClass: 'first'
-            },
+                    total: 0,
+                    page: 1,
+                    maxVisible: null,
+                    leaps: true,
+                    href: 'javascript:void(0);',
+                    hrefVariable: '{{number}}',
+                    next: '&raquo;',
+                    prev: '&laquo;',
+                    firstLastUse: false,
+                    first: '<span aria-hidden="true">&larr;</span>',
+                    last: '<span aria-hidden="true">&rarr;</span>',
+                    wrapClass: 'pagination',
+                    activeClass: 'active',
+                    disabledClass: 'disabled',
+                    nextClass: 'next',
+                    prevClass: 'prev',
+                    lastClass: 'last',
+                    firstClass: 'first'
+                },
                 $owner.data('settings') || {},
                 options || {});
-
         if (settings.total <= 0) {
-            return this;
+            return $owner; // same as return this
         }
 
         // check whether maxVisible is a number or not
@@ -58,7 +57,6 @@
 
         function renderPage($bootpag, page) {
             // page to show
-            console.log(page);
             page = parseInt(page, 10);
             var lp,
                 maxV = settings.maxVisible == 0 ? 1 : settings.maxVisible,
@@ -70,7 +68,7 @@
             $page.removeClass(settings.activeClass);
             lp = page - 1 < 1 ? 1 :
                 settings.leaps && page - 1 >= settings.maxVisible ?
-                    Math.floor((page - 1) / maxV) * maxV : page - 1;
+                Math.floor((page - 1) / maxV) * maxV : page - 1;
 
             // when the pagination is at the first showing page, disable the leap to first button
             $page
@@ -90,7 +88,7 @@
             // var step = settings.maxVisible == 1 ? 0 : 1;
             lp = page + 1 > settings.total ? settings.total :
                 settings.leaps && page + 1 < settings.total - settings.maxVisible ?
-                    vis + settings.maxVisible + step : page + 1;
+                vis + settings.maxVisible + step : page + 1;
 
             var llast = $page.last();
             if (settings.firstLastUse) {
@@ -108,11 +106,10 @@
 
 
             var $currPage = $page.filter('[data-lp=' + page + ']');
-            console.log($currPage);
             var clist = "." + [settings.nextClass,
-            settings.prevClass,
-            settings.firstClass,
-            settings.lastClass
+                settings.prevClass,
+                settings.firstClass,
+                settings.lastClass
             ].join(",.");
 
 
@@ -133,8 +130,8 @@
         }
 
         function href(c) {
-            console.log(c, ':', settings.hrefVariable);
-            console.log(c, ':', settings.href);
+            // console.log(c, ':', settings.hrefVariable);
+            // console.log(c, ':', settings.href);
             return settings.href.replace(settings.hrefVariable, c);
         }
 
@@ -178,11 +175,11 @@
 
                 var me = $(this);
                 if (me.hasClass(settings.disabledClass) || me.hasClass(settings.activeClass)) {
-                    return;
+                    return; // same as return undefined, and it can be ignore
                 }
                 var page = parseInt(me.attr('data-lp'), 10);
                 $owner.find('ul.bootpag').each(function () {
-                    renderPage($(this), page);
+                    renderPage($(this), page); //$(this) indicate to ul.pagination.bootpag
                 });
 
                 $owner.trigger('page', page);
