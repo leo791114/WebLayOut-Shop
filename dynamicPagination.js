@@ -20,12 +20,12 @@
             firstClass: 'first'
         };
 
-        var $ulTag = this,
+        var $tag = this,
             settings = $.extend($.fn.dynamicPagination.default, options || {});
 
         // The total pages should be great than zero
         if (settings.total <= 0) {
-            return $ulTag;
+            return $tag;
         }
 
         // Check whether maxVisible is a number or not
@@ -34,12 +34,12 @@
         }
 
         // Assign setting values to ul tag's settings attribute
-        $ulTag.data('settings', settings);
+        $tag.data('settings', settings);
 
         function pageTabs() {
 
             // var $this = $(this);
-            console.log($ulTag);
+            console.log($tag);
             console.log(settings.prevClass);
             var pageTab = ['<ul class="', settings.ulClass, '" >'];
 
@@ -64,13 +64,25 @@
                 pageTab = pageTab.concat(['<li value="', settings.total, '" class="', settings.lastClass, '"><a href="', href(settings.total), '">', settings.last, '</a></li>']);
             }
 
-            console.log(pageTab);
             pageTab.push('</ul>');
-            $ulTag.append(pageTab.join(''));
-            $('ul.' + settings.ulClass + 'li[value="' + settings.page + '"]').addClass('active');
+            console.log(pageTab);
+            $tag.append(pageTab.join(''));
 
+            // make current page active
+            $('ul.' + settings.ulClass + ' li[value="' + settings.page +
+                    '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
+                .addClass('active');
 
+            // find ul with pagination class
+            var $ulTag = $tag.find('ul');
+            console.log($ulTag);
 
+            $ulTag.find('li').click(function paginationClick() {
+                var $this = $(this);
+                if ($this.hasClass(settings.disabledClass) || $this.hasClass(settings.activeClass)) {
+                    return;
+                }
+            })
         }
 
         function href(value) {
