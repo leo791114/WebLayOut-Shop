@@ -70,7 +70,7 @@
 
             // make current page active
             $('ul.' + settings.ulClass + ' li[value="' + settings.page +
-                    '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
+                '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
                 .addClass('active');
 
             // find ul with pagination class
@@ -82,7 +82,7 @@
                 if ($this.hasClass(settings.disabledClass) || $this.hasClass(settings.activeClass)) {
                     return;
                 }
-            })
+            });
         }
 
         function href(value) {
