@@ -62,7 +62,7 @@
             var lp,
                 maxV = settings.maxVisible == 0 ? 1 : settings.maxVisible,
                 step = settings.maxVisible == 1 ? 0 : 1,
-                vis = Math.floor((page - 1) / maxV) * maxV,
+                vis = Math.floor((page - 1) / maxV) * maxV, //page - 1 is used to handle the situation which page is equal or less than 1
                 $page = $bootpag.find('li');
 
             settings.page = page = page < 0 ? 0 : page > settings.total ? settings.total : page;
@@ -112,6 +112,7 @@
             settings.firstClass,
             settings.lastClass
             ].join(",.");
+            console.log(clist);
 
 
             if (!$currPage.not(clist).length) {

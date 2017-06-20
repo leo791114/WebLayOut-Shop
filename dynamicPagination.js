@@ -51,7 +51,7 @@
                 pageTab = pageTab.concat(['<li value="1" class="', settings.prevClass, '">', '<a href="', href(1), '">', settings.prev, '</a></li>']);
             }
 
-            for (var i = 1; i <= Math.min(settings.total || settings.maxVisible); i++) {
+            for (var i = 1; i <= Math.min(settings.total, settings.maxVisible); i++) {
 
                 pageTab = pageTab.concat(['<li value="', i, '"><a href="', href(i), '">', i, '</a></li>']);
             }
@@ -70,7 +70,7 @@
 
             // make current page active
             $('ul.' + settings.ulClass + ' li[value="' + settings.page +
-                    '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
+                '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
                 .addClass('active');
 
             // find ul with pagination class
