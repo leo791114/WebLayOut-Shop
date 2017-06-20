@@ -25,6 +25,12 @@
 
         // The total pages should be great than zero
         if (settings.total <= 0) {
+            console.log('Total pages should be greater than zero.');
+            return $tag;
+        }
+
+        if (settings.page <= 0) {
+            console.log('Page should be greater than zero.');
             return $tag;
         }
 
@@ -38,6 +44,14 @@
 
         function pageTabs() {
 
+            var page = settings.page,
+                maxV = settings.maxVisible,
+                total = settings.total,
+                pageSection = total >= maxV ? Math.floor((page / maxV) + 1) * maxV : total,
+                leapStep = settings.leap ? pageSection - (page + 1) : 1,
+                pageStart = total >= maxV ? pageSection - (maxV - 1) : 1;
+            console.log(pageSection);
+            console.log(pageStart);
             // var $this = $(this);
             console.log($tag);
             console.log(settings.prevClass);
@@ -51,7 +65,7 @@
                 pageTab = pageTab.concat(['<li value="1" class="', settings.prevClass, '">', '<a href="', href(1), '">', settings.prev, '</a></li>']);
             }
 
-            for (var i = 1; i <= Math.min(settings.total, settings.maxVisible); i++) {
+            for (var i = pageStart; i <= Math.min(total, pageSection); i++) {
 
                 pageTab = pageTab.concat(['<li value="', i, '"><a href="', href(i), '">', i, '</a></li>']);
             }
@@ -61,7 +75,7 @@
             }
 
             if (settings.leapFirstLast) {
-                pageTab = pageTab.concat(['<li value="', settings.total, '" class="', settings.lastClass, '"><a href="', href(settings.total), '">', settings.last, '</a></li>']);
+                pageTab = pageTab.concat(['<li value="', total, '" class="', settings.lastClass, '"><a href="', href(settings.total), '">', settings.last, '</a></li>']);
             }
 
             pageTab.push('</ul>');
@@ -70,7 +84,7 @@
 
             // make current page active
             $('ul.' + settings.ulClass + ' li[value="' + settings.page +
-                '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
+                    '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
                 .addClass('active');
 
             // find ul with pagination class
@@ -85,6 +99,10 @@
             });
         }
 
+        // function renderPage($tag, page){
+
+
+        // }
         function href(value) {
             return '#' + value;
         }
