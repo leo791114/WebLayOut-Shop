@@ -83,26 +83,52 @@
             $tag.append(pageTab.join(''));
 
             // make current page active
-            $('ul.' + settings.ulClass + ' li[value="' + settings.page +
-                    '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
+            $('ul.' + settings.ulClass + ' li[value="' + page +
+                '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
                 .addClass('active');
 
             // find ul with pagination class
             var $ulTag = $tag.find('ul');
-            console.log($ulTag);
-
+            // pagination tabs click effect
             $ulTag.find('li').click(function paginationClick() {
                 var $this = $(this);
+                console.log($this);
                 if ($this.hasClass(settings.disabledClass) || $this.hasClass(settings.activeClass)) {
                     return;
+                } else {
+                    $ulTag.find('li').removeClass(settings.activeClass);
+                    $this.addClass(settings.activeClass).find('a').trigger('click');
                 }
             });
+
+
         }
 
-        // function renderPage($tag, page){
+        function toFirstLast() {
+
+            $('.' + settings.firstClass).on('click', function () {
+                settings.page = 1;
+
+            })
+        }
+
+        function pageNav($ulTag, page) {
+
+            if (settings.leapFirstLast) {
+                $('.' + settings.firstClass).on('click', function () {
+                    settings.page = $ulTag.first().not('.' + settings.firstClass, '.' + settings.prevClass).attr('value');
+                    $ulTag.find('li.active').removeClass('active');
+                    $('[value = 1]').addClass('active').find('a').trigger('click');
+                    console.log($ulTag);
+                });
+            }
 
 
-        // }
+
+        }
+
+
+
         function href(value) {
             return '#' + value;
         }
