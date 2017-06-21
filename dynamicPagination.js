@@ -42,7 +42,7 @@
         // Assign setting values to ul tag's settings attribute
         $tag.data('settings', settings);
 
-        function pageTabs() {
+        function initPageTabs() {
 
             var page = settings.page,
                 maxV = settings.maxVisible,
@@ -84,7 +84,7 @@
 
             // make current page active
             $('ul.' + settings.ulClass + ' li[value="' + page +
-                '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
+                    '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
                 .addClass('active');
 
             // find ul with pagination class
@@ -104,37 +104,33 @@
 
         }
 
-        function toFirstLast() {
+        function renderPage(page) {
 
-            $('.' + settings.firstClass).on('click', function () {
-                settings.page = 1;
+            page = parseInt(page, 10);
 
-            })
-        }
+            var $page = $tag.find('li'),
+                functionList = '.' + [settings.firstClass,
+                    settings.prevClass,
+                    settings.nextClass,
+                    settings.lastClass
+                ].join(',.');
+            console.log(functionList);
 
-        function pageNav($ulTag, page) {
+            // $page.removeClass('active');
 
-            if (settings.leapFirstLast) {
-                $('.' + settings.firstClass).on('click', function () {
-                    settings.page = $ulTag.first().not('.' + settings.firstClass, '.' + settings.prevClass).attr('value');
-                    $ulTag.find('li.active').removeClass('active');
-                    $('[value = 1]').addClass('active').find('a').trigger('click');
-                    console.log($ulTag);
-                });
-            }
-
+            $page.first().toggleClass(settings.disabledClass, page === 1);
+            $page.last().toggleClass(settings.disabledClass, page === settings.total);
 
 
         }
-
-
 
         function href(value) {
             return '#' + value;
         }
 
         return this.each(function () {
-            pageTabs();
+            initPageTabs();
+            renderPage(settings.page);
         });
 
     };
