@@ -19,25 +19,25 @@
 
         var $owner = this,
             settings = $.extend({
-                    total: 0,
-                    page: 1,
-                    maxVisible: null,
-                    leaps: true,
-                    href: 'javascript:void(0);',
-                    hrefVariable: '{{number}}',
-                    next: '&raquo;',
-                    prev: '&laquo;',
-                    firstLastUse: false,
-                    first: '<span aria-hidden="true">&larr;</span>',
-                    last: '<span aria-hidden="true">&rarr;</span>',
-                    wrapClass: 'pagination',
-                    activeClass: 'active',
-                    disabledClass: 'disabled',
-                    nextClass: 'next',
-                    prevClass: 'prev',
-                    lastClass: 'last',
-                    firstClass: 'first'
-                },
+                total: 0,
+                page: 1,
+                maxVisible: null,
+                leaps: true,
+                href: 'javascript:void(0);',
+                hrefVariable: '{{number}}',
+                next: '&raquo;',
+                prev: '&laquo;',
+                firstLastUse: false,
+                first: '<span aria-hidden="true">&larr;</span>',
+                last: '<span aria-hidden="true">&rarr;</span>',
+                wrapClass: 'pagination',
+                activeClass: 'active',
+                disabledClass: 'disabled',
+                nextClass: 'next',
+                prevClass: 'prev',
+                lastClass: 'last',
+                firstClass: 'first'
+            },
                 $owner.data('settings') || {},
                 options || {});
         if (settings.total <= 0) {
@@ -58,10 +58,10 @@
         function renderPage($bootpag, page) {
             // page to show
             page = parseInt(page, 10);
-            console.log(page);
             var lp,
                 maxV = settings.maxVisible == 0 ? 1 : settings.maxVisible,
-                step = settings.maxVisible == 1 ? 0 : 1,
+                // step = settings.maxVisible == 1 ? 0 : 1,
+                step = 1,
                 vis = Math.floor((page - 1) / maxV) * maxV, //page - 1 is used to handle the situation which page is equal or less than 1
                 $page = $bootpag.find('li');
 
@@ -69,7 +69,7 @@
             $page.removeClass(settings.activeClass);
             lp = page - 1 < 1 ? 1 :
                 settings.leaps && page - 1 >= settings.maxVisible ?
-                Math.floor((page - 1) / maxV) * maxV : page - 1;
+                    Math.floor((page - 1) / maxV) * maxV : page - 1;
 
             // when the pagination is at the first showing page, disable the leap to first button
             $page
@@ -89,7 +89,7 @@
             // var step = settings.maxVisible == 1 ? 0 : 1;
             lp = page + 1 > settings.total ? settings.total :
                 settings.leaps && page + 1 < settings.total - settings.maxVisible ?
-                vis + settings.maxVisible + step : page + 1;
+                    vis + settings.maxVisible + step : page + 1;
 
             var llast = $page.last();
             if (settings.firstLastUse) {
@@ -107,13 +107,16 @@
 
 
             var $currPage = $page.filter('[data-lp=' + page + ']');
+            console.log(page);
+            console.log($page);
+            console.log($currPage);
+            console.log($page.filter('[data-lp' + page + ']'));
             var clist = "." + [settings.nextClass,
-                settings.prevClass,
-                settings.firstClass,
-                settings.lastClass
+            settings.prevClass,
+            settings.firstClass,
+            settings.lastClass
             ].join(",.");
             // console.log(clist);
-
 
             if (!$currPage.not(clist).length) {
                 var d = page <= vis ? -settings.maxVisible : 0;
@@ -124,6 +127,7 @@
                         .attr('data-lp', lp)
                         .toggle(lp <= settings.total)
                         .find('a').html(lp).attr('href', href(lp));
+                    console.log($(this).attr('data-lp'));
                 });
                 $currPage = $page.filter('[data-lp=' + page + ']');
             }

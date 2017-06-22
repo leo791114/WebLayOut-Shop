@@ -84,7 +84,7 @@
 
             // make current page active
             $('ul.' + settings.ulClass + ' li[value="' + page +
-                    '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
+                '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
                 .addClass('active');
 
             // find ul with pagination class
@@ -107,14 +107,14 @@
         function renderPage(page) {
 
             page = parseInt(page, 10);
-
             var $page = $tag.find('li'),
                 functionList = '.' + [settings.firstClass,
-                    settings.prevClass,
-                    settings.nextClass,
-                    settings.lastClass
+                settings.prevClass,
+                settings.nextClass,
+                settings.lastClass
                 ].join(',.');
-            console.log(functionList);
+            var $currentPages =
+                console.log(functionList);
 
             // $page.removeClass('active');
 
