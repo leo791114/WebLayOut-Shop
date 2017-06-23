@@ -109,6 +109,8 @@
             var $currPage = $page.filter('[data-lp=' + page + ']');
             console.log(page);
             console.log($page);
+            console.log($page[2].attr('data-lp'));
+            console.log($page.attr('data-lp'));
             console.log($currPage);
             console.log($page.filter('[data-lp' + page + ']'));
             var clist = "." + [settings.nextClass,
