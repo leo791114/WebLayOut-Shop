@@ -7,6 +7,8 @@ $(function () {
     console.log($outerDiv);
     console.log($innerLi);
     console.log($current);
+    console.log($innerLi[1]);
+    console.log($innerLi[0].getAttribute('value'));
 
     $current.css('background-color', 'yellow');
 });
