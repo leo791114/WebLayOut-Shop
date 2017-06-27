@@ -19,25 +19,25 @@
 
         var $owner = this,
             settings = $.extend({
-                total: 0,
-                page: 1,
-                maxVisible: null,
-                leaps: true,
-                href: 'javascript:void(0);',
-                hrefVariable: '{{number}}',
-                next: '&raquo;',
-                prev: '&laquo;',
-                firstLastUse: false,
-                first: '<span aria-hidden="true">&larr;</span>',
-                last: '<span aria-hidden="true">&rarr;</span>',
-                wrapClass: 'pagination',
-                activeClass: 'active',
-                disabledClass: 'disabled',
-                nextClass: 'next',
-                prevClass: 'prev',
-                lastClass: 'last',
-                firstClass: 'first'
-            },
+                    total: 0,
+                    page: 1,
+                    maxVisible: null,
+                    leaps: true,
+                    href: 'javascript:void(0);',
+                    hrefVariable: '{{number}}',
+                    next: '&raquo;',
+                    prev: '&laquo;',
+                    firstLastUse: false,
+                    first: '<span aria-hidden="true">&larr;</span>',
+                    last: '<span aria-hidden="true">&rarr;</span>',
+                    wrapClass: 'pagination',
+                    activeClass: 'active',
+                    disabledClass: 'disabled',
+                    nextClass: 'next',
+                    prevClass: 'prev',
+                    lastClass: 'last',
+                    firstClass: 'first'
+                },
                 $owner.data('settings') || {},
                 options || {});
         if (settings.total <= 0) {
@@ -69,7 +69,7 @@
             $page.removeClass(settings.activeClass);
             lp = page - 1 < 1 ? 1 :
                 settings.leaps && page - 1 >= settings.maxVisible ?
-                    Math.floor((page - 1) / maxV) * maxV : page - 1;
+                Math.floor((page - 1) / maxV) * maxV : page - 1;
 
             // when the pagination is at the first showing page, disable the leap to first button
             $page
@@ -80,6 +80,7 @@
             if (settings.firstLastUse) {
                 lfirst = lfirst.next();
             }
+
             // href(lp) will return javascript:void(0)
             lfirst
                 .toggleClass(settings.disabledClass, page === 1)
@@ -89,13 +90,13 @@
             // var step = settings.maxVisible == 1 ? 0 : 1;
             lp = page + 1 > settings.total ? settings.total :
                 settings.leaps && page + 1 < settings.total - settings.maxVisible ?
-                    vis + settings.maxVisible + step : page + 1;
+                vis + settings.maxVisible + step : page + 1;
 
             var llast = $page.last();
             if (settings.firstLastUse) {
                 llast = llast.prev();
             }
-
+            console.log(lp);
             llast
                 .toggleClass(settings.disabledClass, page === settings.total)
                 .attr('data-lp', lp)
@@ -110,20 +111,22 @@
             console.log(lfirst[0]);
             console.log(page);
             console.log($page);
+            console.log($page[7]);
+            console.log($page[7].getAttribute('data-lp'));
             console.log($page[4]);
-            console.log($page[8].getAttribute('data-lp'));
+            console.log($page[4].getAttribute('data-lp'));
             console.log($page.attr('data-lp'));
             console.log($currPage);
             console.log($page.filter('[data-lp' + page + ']'));
             var clist = "." + [settings.nextClass,
-            settings.prevClass,
-            settings.firstClass,
-            settings.lastClass
+                settings.prevClass,
+                settings.firstClass,
+                settings.lastClass
             ].join(",.");
             // console.log(clist);
 
             if (!$currPage.not(clist).length) {
-                var d = page <= vis ? -settings.maxVisible : 0;
+                var d = page <= vis ? -settings.maxVisible : 0; // True condition would appear when page is less than zero
                 // console.log('d:', d);
                 $page.not(clist).each(function (index) {
                     lp = index + 1 + vis + d;
