@@ -49,13 +49,14 @@
             var page = settings.page,
                 maxV = settings.maxVisible,
                 total = settings.total,
-                pageSection = total >= maxV ? Math.floor((page / maxV) + 1) * maxV : total,
-                leapStep = settings.leap ? pageSection - (page + 1) : 1;
+                leapStep;
+            // pageSection = total >= maxV ? Math.floor((page / maxV) + 1) * maxV : total,
+            // leapStep = settings.leap ? pageSection - (page + 1) : 1;
             // pageStart = total >= maxV ? pageSection - (maxV - 1) : 1;
-            console.log(pageSection);
+            // console.log(pageSection);
             // var $this = $(this);
             console.log($tag);
-            console.log(settings.prevClass);
+            // console.log(settings.prevClass);
             var pageTab = ['<ul class="', settings.ulClass, '" >'];
 
             if (settings.leapFirstLast) {
@@ -67,7 +68,6 @@
             }
 
             for (var i = 1; i <= Math.min(total, maxV); i++) {
-
                 pageTab = pageTab.concat(['<li value="', i, '"><a href="', href(i), '">', i, '</a></li>']);
             }
 
@@ -96,19 +96,21 @@
                 console.log($this);
                 if ($this.hasClass(settings.disabledClass) || $this.hasClass(settings.activeClass)) {
                     return;
-                } else {
-                    $ulTag.find('li').removeClass(settings.activeClass);
-                    $this.addClass(settings.activeClass).find('a').trigger('click');
                 }
+
+                var page = parseInt($this.attr('value'), 10);
+                console.log(page);
+                $ulTag.each(function () {
+                    renderPage($(this), page);
+                });
             });
-
-
+            renderPage($(this), page);
         }
 
-        function renderPage(page) {
+        function renderPage($ulTag, currentPage) {
 
-            page = parseInt(page, 10);
-            var $page = $tag.find('li'),
+            var page = parseInt(currentPage, 10);
+            var $page = $ulTag.find('li'),
                 functionList = '.' + [settings.firstClass,
                     settings.prevClass,
                     settings.nextClass,
@@ -120,6 +122,12 @@
             // $page.removeClass('active');
 
             $page.first().toggleClass(settings.disabledClass, page === 1);
+            var prePage = $page.first();
+            if (settings.leapFirstLast) {
+                prePage = prePage.next();
+            }
+            prePage.toggleClass(settings.disabledClass, page === 1)
+
             $page.last().toggleClass(settings.disabledClass, page === settings.total);
 
 

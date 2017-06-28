@@ -57,6 +57,7 @@
 
         function renderPage($bootpag, page) {
             // page to show
+            console.log($bootpag);
             page = parseInt(page, 10);
             var lp,
                 maxV = settings.maxVisible == 0 ? 1 : settings.maxVisible,
