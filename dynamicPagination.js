@@ -76,7 +76,7 @@
             }
 
             if (settings.leapFirstLast) {
-                pageTab = pageTab.concat(['<li value="', total, '" class="', settings.lastClass, '"><a href="', href(settings.total), '">', settings.last, '</a></li>']);
+                pageTab = pageTab.concat(['<li value="', total, '" class="', settings.lastClass, '"><a href="', href(total), '">', settings.last, '</a></li>']);
             }
 
             pageTab.push('</ul>');
@@ -85,7 +85,7 @@
 
             // make current page active
             $('ul.' + settings.ulClass + ' li[value="' + page +
-                    '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
+                '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
                 .addClass('active');
 
             // find ul with pagination class
@@ -95,7 +95,7 @@
                 var $this = $(this);
                 console.log($this);
                 if ($this.hasClass(settings.disabledClass) || $this.hasClass(settings.activeClass)) {
-                    return;
+                    return; //same as return undefined, and it can be ignored
                 }
 
                 var page = parseInt($this.attr('value'), 10);
@@ -109,12 +109,13 @@
 
         function renderPage($ulTag, currentPage) {
 
-            var page = parseInt(currentPage, 10);
+            var page = parseInt(currentPage, 10),
+                liValue;
             var $page = $ulTag.find('li'),
                 functionList = '.' + [settings.firstClass,
-                    settings.prevClass,
-                    settings.nextClass,
-                    settings.lastClass
+                settings.prevClass,
+                settings.nextClass,
+                settings.lastClass
                 ].join(',.');
             var $currentPages =
                 console.log(functionList);
@@ -126,7 +127,11 @@
             if (settings.leapFirstLast) {
                 prePage = prePage.next();
             }
-            prePage.toggleClass(settings.disabledClass, page === 1)
+
+            liValue = settings.leap &&
+
+                prePage.toggleClass(settings.disabledClass, page === 1)
+                    .attr('value', )
 
             $page.last().toggleClass(settings.disabledClass, page === settings.total);
 
