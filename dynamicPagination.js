@@ -85,7 +85,7 @@
 
             // make current page active
             $('ul.' + settings.ulClass + ' li[value="' + page +
-                '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
+                    '"]:not( .' + settings.firstClass + ', .' + settings.prevClass + ', .' + settings.nextClass + ', .' + settings.lastClass + ')')
                 .addClass('active');
 
             // find ul with pagination class
@@ -113,9 +113,9 @@
                 liValue;
             var $page = $ulTag.find('li'),
                 functionList = '.' + [settings.firstClass,
-                settings.prevClass,
-                settings.nextClass,
-                settings.lastClass
+                    settings.prevClass,
+                    settings.nextClass,
+                    settings.lastClass
                 ].join(',.');
             var $currentPages =
                 console.log(functionList);
@@ -128,10 +128,11 @@
                 prePage = prePage.next();
             }
 
-            liValue = settings.leap &&
+            liValue = page + 1 > settings.total ? settings.total :
+                settings.leap
 
-                prePage.toggleClass(settings.disabledClass, page === 1)
-                    .attr('value', )
+            prePage.toggleClass(settings.disabledClass, page === 1)
+                .attr('value', )
 
             $page.last().toggleClass(settings.disabledClass, page === settings.total);
 
